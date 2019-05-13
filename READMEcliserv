@@ -1,0 +1,26 @@
+Andrew Wolstenholme
+awolste
+C11132861
+
+This package includes two c code files which generate a udp client/server connection.
+Using the server ip address, a port number, and a text file given through the
+command line, the client communicates data to the server program, line by line, which
+creates a file of the same name, reverses the order of each line, and writes to the
+file. There is constant error checking at each stage of the program. The client and
+server have a protocol to quit when the data transfer is complete
+
+client.c
+The client creates a socket connection with the server using an ip address and port
+number, and sends line by line the contents of the file given by the command line,
+then quits.
+
+server.c
+The server creates a file, binds to an address, then calls recvfrom to wait for a 
+message from the client, at which time it creates a file with the file name give, then 
+loops infinitely, reversing and writing each line recieved to the file, then quits 
+when EOF is sent.
+
+Makefile
+This file compiles server.c and client.c by the call make, and also allows for the
+call make clean to remove .o files, however there is no run command as they must be
+run seperately on different terminals to create a connection.
