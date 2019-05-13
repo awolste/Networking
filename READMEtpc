@@ -1,0 +1,25 @@
+Andrew Wolstenholme 
+awolste
+C11132861
+
+This package includes two c code files which generate a tcp client/server connection.
+Using the server ip address, a port number, and a text file given through the
+command line, the client communicates data to the server program, which prints
+to standard out the original file, reversing the order of bytes in each line. 
+There is constant error checking at each stage of the program.
+
+tcpclient.c
+By using write layered functions, this program creates a socket, creates a connection
+and sends the contents of the input file, byte by byte, to the server, 
+which is waiting to read the data.
+Run with ./tcpclient 127.0.0.1 1234 myfile.txt, where the arguments are the 
+ip number, the port number, and a text file.
+
+tcpserver.c
+By using read layered functions, this program creates a file, binds to an address,
+then listens and accepts a connection and reads, byte by byte, the data sent 
+from the client, reverses each line, and prints to the command line. 
+Run with ./tcpserver 1234 where 1234 is the port number
+
+Makefile
+This file compiles tcpserver.c and tcpclient.c by the call make, and also allows for the call make clean to remove .o files, however there is no run command as they must be run seperately on different terminals to create a connection.
