@@ -1,0 +1,19 @@
+Andrew Wolstenholme
+awolste
+C11132861
+
+This package includes one c code file which generates a tcp client connection.
+Using the server of the URI and a text file given through the
+command line, the client requests data from the server site, byte by byte, which
+creates a file of the given name, and writes to the file an image, html, etc.. 
+There is constant error checking at each stage of the program. The client
+has a protocol to quit when the data transfer is complete.
+
+httpclient.c
+The client creates a socket connection with the server, sends a get request, and receives data
+byte by byte, writing everything after the header into a file.
+
+Makefile
+This file compiles httpclient.c by the call make, and also allows for the
+call make clean to remove .o files, however there is no run command as there are command
+line arguments of the URI and file name required.
