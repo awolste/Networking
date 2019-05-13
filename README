@@ -1,0 +1,19 @@
+Andrew Wolstenholme
+awolste
+C11132861
+
+This package includes one c code file which generates a connection that can be used to chat concurrently with
+multiple computers at once. Using standard in the user can initiate a connection to an ip address, send a
+message to a specific computer, and close a specific connection. The program can also receive messages from
+other computers by the use of multiplexing and threading.
+
+lastprogram.c
+This tpc client and server creates a socket, binds and address to it, and listens for a connection request or 
+command from the standard in. It utilizes a konnect function to create a connection to another ip,
+keeps track of all the connections and can do any of the above commands with any computer at any time.
+To initiate connection type i *IPaddress*, to send a message send s *IPaddress* *message*, to terminate a 
+connection type x *IPaddress*, and to quit the program type q.
+
+Makefile
+This file compiles lastprogram.c by the call make, and also allows for the
+call make clean to remove .o files, however there is no run command.
